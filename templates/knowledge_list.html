@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Knowledge List{% endblock %}
+{% block content %}
+<h1>Knowledge Entries</h1>
+<a href="{{ url_for('knowledge_edit') }}">Add New</a>
+<table>
+    <tr><th>Title</th><th>Actions</th></tr>
+    {% for item in knowledge %}
+    <tr>
+        <td>{{ item.title }}</td>
+        <td>
+            <a href="{{ url_for('knowledge_edit', id=item.id) }}">Edit</a> |
+            <a href="{{ url_for('knowledge_delete', id=item.id) }}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
