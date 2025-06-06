@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}RAG Query{% endblock %}
+{% block content %}
+<form method="post" id="queryForm">
+  <input type="text" name="text" placeholder="Ask something">
+  <button type="submit">Ask</button>
+</form>
+{% if answer %}
+<h3>Answer</h3>
+<pre>{{ answer }}</pre>
+{% endif %}
+{% endblock %}
