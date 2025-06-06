@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Your Knowledge</h2>
+<a href="{{ url_for('knowledge.new_knowledge') }}">New Knowledge</a>
+<ul>
+  {% for k in knowledges %}
+  <li>{{ k.title }} - <a href="{{ url_for('knowledge.edit_knowledge', kid=k.id) }}">Edit</a> <a href="{{ url_for('knowledge.delete_knowledge', kid=k.id) }}">Delete</a></li>
+  {% else %}
+  <li>No knowledge</li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{% if knowledge %}Edit{% else %}New{% endif %} Knowledge</h2>
+<form method="post">
+  <input name="title" value="{{ knowledge.title if knowledge else '' }}" placeholder="Title">
+  <textarea name="content" placeholder="Content">{{ knowledge.content if knowledge else '' }}</textarea>
+  <button type="submit">Save</button>
+</form>
+{% endblock %}
