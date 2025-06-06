@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Knowledge{% endblock %}
+{% block content %}
+<h2>Your Knowledge</h2>
+<ul>
+  {% for k in items %}
+  <li>{{ k.title }}</li>
+  {% else %}
+  <li>No knowledge entries.</li>
+  {% endfor %}
+</ul>
+<a href="{{ url_for('knowledge.new_knowledge') }}">Add New</a>
+{% endblock %}
