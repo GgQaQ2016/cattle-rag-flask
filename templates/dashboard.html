@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2>User Dashboard</h2>
+<ul>
+    <li><a href="{{ url_for('knowledge_list') }}">Manage Knowledge</a></li>
+    <li><a href="{{ url_for('upload') }}">Upload Data</a></li>
+    <li><a href="{{ url_for('rag_query') }}">RAG Query</a></li>
+</ul>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h1>Welcome to Cattle RAG</h1>
+<p>This project demonstrates retrieval augmented generation with your knowledge base.</p>
+<p><a href="{{ url_for('rag_query') }}">Start Asking Questions</a></p>
+{% endblock %}

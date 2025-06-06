@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}RAG Query{% endblock %}
+{% block content %}
+<h2>RAG Query</h2>
+<form method="post" id="rag-form">
+    <label>Question: <input type="text" name="question" id="question" required></label>
+    <button type="submit">Submit</button>
+</form>
+<div id="results"></div>
+<script src="{{ url_for('static', filename='rag.js') }}"></script>
+{% endblock %}
