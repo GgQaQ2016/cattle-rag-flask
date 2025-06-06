@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Knowledge List</h2>
+<ul>
+{% for k in knowledges %}
+  <li>{{ k.title }}</li>
+{% endfor %}
+</ul>
+{% endblock %}
