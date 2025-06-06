@@ -1,0 +1,1 @@
+// General page scripts placeholder
