@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Add Knowledge{% endblock %}
+{% block content %}
+<h2>Add Knowledge</h2>
+<form method="post">
+    <label>Title:</label>
+    <input type="text" name="title">
+    <label>Content:</label>
+    <textarea name="content"></textarea>
+    <button type="submit">Save</button>
+</form>
+{% endblock %}
