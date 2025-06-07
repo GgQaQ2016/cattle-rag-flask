@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}RAG Result{% endblock %}
+{% block content %}
+<h1>Result</h1>
+<p><strong>Question:</strong> {{ question }}</p>
+<p><strong>Answer:</strong></p>
+<p>{{ answer }}</p>
+{% if sources %}
+<h3>Sources</h3>
+<ul>
+    {% for src in sources %}
+    <li>{{ src }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<a href="{{ url_for('rag_query') }}">Ask another</a>
+{% endblock %}
