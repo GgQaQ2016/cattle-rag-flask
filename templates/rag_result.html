@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title %}RAG Result{% endblock %}
+{% block content %}
+<h2>RAG Result</h2>
+<p>{{ result }}</p>
+<a href="{{ url_for('rag_query') }}">Back to Query</a>
+{% endblock %}

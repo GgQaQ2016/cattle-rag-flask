@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}RAG Query{% endblock %}
+{% block content %}
+<h2>RAG Query</h2>
+<form method="post" action="{{ url_for('rag_query') }}">
+    <label for="question">Your question:</label>
+    <textarea id="question" name="question" rows="3" required></textarea>
+    <button type="submit">Ask</button>
+</form>
+{% if chunks %}
+<h3>Select relevant chunks</h3>
+<form method="post" action="{{ url_for('rag_generate') }}">
+    {% for chunk in chunks %}
+        <div>
+            <input type="checkbox" id="chunk{{ loop.index }}" name="chunk_ids" value="{{ chunk.id }}">
+            <label for="chunk{{ loop.index }}">{{ chunk.content }}</label>
+        </div>
+    {% endfor %}
+    <button type="submit">Generate Answer</button>
+</form>
+{% endif %}
+{% endblock %}

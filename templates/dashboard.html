@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2>User Dashboard</h2>
+<p>Welcome, {{ current_user.username if current_user else 'Guest' }}.</p>
+<ul>
+    <li><a href="{{ url_for('knowledge_list') }}">Manage Knowledge</a></li>
+    <li><a href="{{ url_for('rag_query') }}">Run RAG Query</a></li>
+    <li><a href="{{ url_for('upload') }}">Upload Data</a></li>
+</ul>
+{% endblock %}
