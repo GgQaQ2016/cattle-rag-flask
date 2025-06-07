@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% if knowledge %}
+    {% set page_title = "Edit Knowledge" %}
+{% else %}
+    {% set page_title = "Add Knowledge" %}
+{% endif %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block content %}
+<h2>{{ page_title }}</h2>
+<form method="post">
+    <label>Title: <input type="text" name="title" value="{{ knowledge.title if knowledge }}" required></label><br>
+    <label>Content:</label><br>
+    <textarea name="content" rows="10" cols="60">{{ knowledge.content if knowledge }}</textarea><br>
+    <button type="submit">Save</button>
+</form>
+{% endblock %}
